@@ -8,7 +8,7 @@
 
 
 class FlinksError(Exception):
-    """ Base exception for all exceptions that can be raised by the Flinks client. """
+    """Base exception for all exceptions that can be raised by the Flinks client."""
 
     def __init__(self, msg=None):
         self.msg = msg
@@ -18,7 +18,7 @@ class FlinksError(Exception):
 
 
 class TransportError(FlinksError):
-    """ Raised when an error occurs related to the connection with the Flinks service. """
+    """Raised when an error occurs related to the connection with the Flinks service."""
 
     def __init__(self, msg, response):
         super().__init__(msg)
@@ -26,7 +26,7 @@ class TransportError(FlinksError):
 
 
 class ProtocolError(FlinksError):
-    """ Raised when an error occurs related to the response processing. """
+    """Raised when an error occurs related to the response processing."""
 
     def __init__(self, msg, response=None, data=None):
         super().__init__(msg)

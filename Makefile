@@ -19,15 +19,18 @@ shell:
 # The following rules can be used to check code quality, import sorting, etc.
 # --------------------------------------------------------------------------------------------------
 
-qa: lint isort
+qa: format isort lint
 
 # Code quality checks (eg. flake8, eslint, etc).
 lint:
 	pipenv run flake8
 
+format:
+	black flinks
+
 # Import sort checks.
 isort:
-	pipenv run isort --check-only --recursive --diff flinks tests
+	isort flinks
 
 
 # TESTING
@@ -46,3 +49,6 @@ coverage:
 # Run the tests in "spec" mode.
 spec:
 	pipenv run py.test --spec -p no:sugar
+
+typecheck:
+	mypy ./$(flinks) --check-untyped-defs

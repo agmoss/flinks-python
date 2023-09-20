@@ -94,3 +94,6 @@ ENV/
 # Ideas
 /.idea/
 .idea/vcs.xml
+
+# mypy
+.mypy_cache
