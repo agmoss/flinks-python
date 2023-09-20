@@ -52,3 +52,28 @@ spec:
 
 typecheck:
 	mypy ./$(flinks) --check-untyped-defs
+
+clean: clean-build clean-pyc clean-test clean-mypy
+
+clean-build:
+	$(RM) -fr build/
+	$(RM) -fr dist/
+	$(RM) -fr .eggs/
+	find . -name '*.egg-info' -exec $(RM) -fr {} +
+	find . -name '*.egg' -exec $(RM) -f {} +
+
+clean-pyc:
+	find . -name '*.pyc' -exec $(RM) -f {} +
+	find . -name '*.pyo' -exec $(RM) -f {} +
+	find . -name '*~' -exec $(RM) -f {} +
+	find . -name '__pycache__' -exec $(RM) -fr {} +
+
+clean-mypy:
+	$(RM) -fr .mypy_cache/
+
+clean-test:
+	$(RM) -fr .pytest_cache
+
+dist: clean
+	python setup.py sdist
+	ls -l dist

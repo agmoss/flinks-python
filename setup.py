@@ -15,13 +15,13 @@ def read_relative_file(filename):
 
 
 setup(
-    name='flinks',
+    name='python-flinks',
     version=flinks.__version__,
-    author='impak Finance',
-    author_email='tech@impakfinance.com',
+    author='Andrew Moss',
+    author_email='andrew@m0ss.dev',
     packages=find_packages(exclude=['tests.*', 'tests']),
     include_package_data=True,
-    url='https://github.com/impak-finance/flinks-python',
+    url='https://github.com/agmoss/python-flinks',
     license='MIT',
     description='A Python module for communicating with the Flinks.io API.',
     long_description=read_relative_file('README.rst'),
@@ -38,9 +38,6 @@ setup(
         'Natural Language :: English',
         'Programming Language :: Python',
         'Programming Language :: Python :: 3',
-        'Programming Language :: Python :: 3.4',
-        'Programming Language :: Python :: 3.5',
-        'Programming Language :: Python :: 3.6',
-        'Programming Language :: Python :: 3.7',
+        'Programming Language :: Python :: 3.11',
     ],
 )
