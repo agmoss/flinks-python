@@ -1,26 +1,26 @@
-python-flinks
+pyflinks
 =============
 
-.. image:: https://img.shields.io/pypi/l/python-flinks.svg
-    :target: https://pypi.python.org/pypi/python-flinks/
+.. image:: https://img.shields.io/pypi/l/pyflinks.svg
+    :target: https://pypi.python.org/pypi/pyflinks/
     :alt: License
 
-.. image:: https://img.shields.io/pypi/pyversions/python-flinks.svg
-    :target: https://pypi.python.org/pypi/python-flinks
+.. image:: https://img.shields.io/pypi/pyversions/pyflinks.svg
+    :target: https://pypi.python.org/pypi/pyflinks
 
-.. image:: https://img.shields.io/pypi/v/python-flinks.svg
-    :target: https://pypi.python.org/pypi/python-flinks/
+.. image:: https://img.shields.io/pypi/v/pyflinks.svg
+    :target: https://pypi.python.org/pypi/pyflinks/
     :alt: Latest Version
 
-.. image:: https://travis-ci.org/agmoss/python-flinks.svg?branch=master
-    :target: https://travis-ci.org/agmoss/python-flinks
+.. image:: https://travis-ci.org/agmoss/pyflinks.svg?branch=master
+    :target: https://travis-ci.org/agmoss/pyflinks
 
-.. image:: https://codecov.io/gh/agmoss/python-flinks/branch/master/graph/badge.svg
-  :target: https://codecov.io/gh/agmoss/python-flinks
+.. image:: https://codecov.io/gh/agmoss/pyflinks/branch/master/graph/badge.svg
+  :target: https://codecov.io/gh/agmoss/pyflinks
 
 |
 
-**python-flinks** is a Python module for communicating with the
+**pyflinks** is a Python module for communicating with the
 `Flinks.io API <https://sandbox.flinks.io/documentation/>`_.
 
 .. contents:: Table of Contents
@@ -34,11 +34,11 @@ Python_ 3.11+, Requests_ 2.0+.
 Installation
 ------------
 
-To install python-flinks, please use pip_ (or pipenv_) as follows:
+To install pyflinks, please use pip_ (or pipenv_) as follows:
 
 .. code-block:: shell
 
-    $ pip install --pre python-flinks
+    $ pip install --pre pyflinks
 
 Basic usage
 -----------
@@ -49,7 +49,7 @@ this initialization:
 
 .. code-block:: python
 
-    >>> from python-flinks import Client
+    >>> from pyflinks import Client
     >>> client = Client('<CUSTOMER_ID>', 'https://sandbox.flinks.io/v3/')
 
 Then you can easily interact with the implemented entities and the underlying API endpoints. Here

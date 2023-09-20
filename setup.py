@@ -5,7 +5,7 @@ from os.path import join
 from setuptools import find_packages
 from setuptools import setup
 
-import flinks
+import pyflinks
 
 
 def read_relative_file(filename):
@@ -15,11 +15,12 @@ def read_relative_file(filename):
 
 
 setup(
-    name='python-flinks',
-    version=flinks.__version__,
+    name='pyflinks',
+    version=pyflinks.__version__,
     author='Andrew Moss',
     author_email='andrew@m0ss.dev',
     packages=find_packages(exclude=['tests.*', 'tests']),
+    package_data={"pyflinks": ["py.typed"]},
     include_package_data=True,
     url='https://github.com/agmoss/python-flinks',
     license='MIT',

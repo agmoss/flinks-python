@@ -5,3 +5,4 @@ include *.rst
 global-exclude *.pyc
 global-exclude __pycache__
 recursive-exclude tests *
+global-include *.typed

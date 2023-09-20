@@ -3,8 +3,8 @@ import unittest.mock
 import pytest
 from requests.exceptions import HTTPError
 
-from flinks import Client
-from flinks.exceptions import ProtocolError, TransportError
+from pyflinks import Client
+from pyflinks.exceptions import ProtocolError, TransportError
 
 
 class TestClient:

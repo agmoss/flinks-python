@@ -74,6 +74,9 @@ clean-mypy:
 clean-test:
 	$(RM) -fr .pytest_cache
 
+release: dist
+	twine upload dist/*
+
 dist: clean
-	python setup.py sdist
+	python setup.py sdist bdist_wheel
 	ls -l dist

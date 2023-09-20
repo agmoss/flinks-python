@@ -1,7 +1,7 @@
 import datetime as dt
 import unittest.mock
 
-from flinks import Client
+from pyflinks import Client
 
 
 class TestBankingServices:
