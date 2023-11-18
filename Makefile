@@ -26,11 +26,11 @@ lint:
 	pipenv run flake8
 
 format:
-	black flinks
+	black pyflinks
 
 # Import sort checks.
 isort:
-	isort flinks
+	isort pyflinks
 
 
 # TESTING
@@ -51,7 +51,7 @@ spec:
 	pipenv run py.test --spec -p no:sugar
 
 typecheck:
-	mypy ./$(flinks) --check-untyped-defs
+	mypy ./$(pyflinks) --check-untyped-defs
 
 clean: clean-build clean-pyc clean-test clean-mypy
 

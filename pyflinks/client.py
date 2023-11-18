@@ -15,6 +15,7 @@ import requests
 from requests.adapters import HTTPAdapter
 from requests.exceptions import HTTPError
 
+from .entities.attributes import Attributes
 from .entities.banking_services import BankingServices
 from .exceptions import ProtocolError, TransportError
 
@@ -51,6 +52,7 @@ class Client:
 
         # Set up entities attributes.
         self._banking_services: Optional[BankingServices] = None
+        self._attributes: Optional[Attributes] = None
 
         ###################
         # FLINKS ENTITIES #
@@ -69,6 +71,20 @@ class Client:
 
             self._banking_services = BankingServices(self)
         return self._banking_services
+
+    @property
+    def attributes(self) -> Attributes:
+        """Allows to access the attributes entity.
+
+        :return: :class:`Attributes <Attributes>` object
+        :rtype: flinks.entities.attributes.Attributes
+
+        """
+        if self._attributes is None:
+            from .entities.attributes import Attributes
+
+            self._attributes = Attributes(self)
+        return self._attributes
 
         ##################################
         # PRIVATE METHODS AND PROPERTIES #

@@ -22,7 +22,7 @@ setup(
     packages=find_packages(exclude=['tests.*', 'tests']),
     package_data={"pyflinks": ["py.typed"]},
     include_package_data=True,
-    url='https://github.com/agmoss/python-flinks',
+    url='https://github.com/agmoss/pyflinks',
     license='MIT',
     description='A Python module for communicating with the Flinks.io API.',
     long_description=read_relative_file('README.rst'),
