@@ -17,6 +17,7 @@ from requests.exceptions import HTTPError
 
 from .entities.attributes import Attributes
 from .entities.banking_services import BankingServices
+from .entities.categorization import Categorization
 from .exceptions import ProtocolError, TransportError
 
 
@@ -50,9 +51,10 @@ class Client:
             self.api_endpoint, HTTPAdapter(max_retries=http_max_retries or 3)
         )
 
-        # Set up entities attributes.
+        # Set up entities.
         self._banking_services: Optional[BankingServices] = None
         self._attributes: Optional[Attributes] = None
+        self._categorization: Optional[Categorization] = None
 
         ###################
         # FLINKS ENTITIES #
@@ -85,6 +87,20 @@ class Client:
 
             self._attributes = Attributes(self)
         return self._attributes
+
+    @property
+    def categorization(self) -> Categorization:
+        """Allows to access the categorization entity.
+
+        :return: :class:`Categorization <Categorization>` object
+        :rtype: flinks.entities.categorization.Categorization
+
+        """
+        if self._categorization is None:
+            from .entities.categorization import Categorization
+
+            self._categorization = Categorization(self)
+        return self._categorization
 
         ##################################
         # PRIVATE METHODS AND PROPERTIES #

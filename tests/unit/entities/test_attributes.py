@@ -11,7 +11,7 @@ class TestBankingServices:
         mocked_get.return_value = mocked_response
 
         client = Client('foo-12345', 'https://username.flinks-custom.io')
-        client.attributes.get_income_attributes( 'login-1234', 'request-1234')
+        client.attributes.get_income_attributes('login-1234', 'request-1234')
 
         assert (
             mocked_get.call_args[0][0] ==
@@ -21,7 +21,6 @@ class TestBankingServices:
             )
         )
 
-
     @unittest.mock.patch('requests.Session.get')
     def test_can_initiate_get_lending_attributes(self, mocked_get):
         mocked_response = unittest.mock.Mock(status_code=200, content='{}')
@@ -29,7 +28,7 @@ class TestBankingServices:
         mocked_get.return_value = mocked_response
 
         client = Client('foo-12345', 'https://username.flinks-custom.io')
-        client.attributes.get_lending_attributes( 'login-1234', 'request-1234')
+        client.attributes.get_lending_attributes('login-1234', 'request-1234')
 
         assert (
             mocked_get.call_args[0][0] ==
