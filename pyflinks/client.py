@@ -8,7 +8,7 @@
 
 """
 
-from typing import Any, Dict, Optional
+from typing import Any, Callable, Dict, Optional
 from urllib.parse import urljoin
 
 import requests
@@ -119,7 +119,9 @@ class Client:
         params = params or {}
 
         # Calls the API endpoint!
-        request = getattr(self.session, http_method.lower())
+        request: Callable[..., requests.Response] = getattr(
+            self.session, http_method.lower()
+        )
         try:
             response = request(
                 urljoin(self.api_endpoint, path),
@@ -129,13 +131,12 @@ class Client:
             )
             response.raise_for_status()
         except HTTPError:
-            if response.status_code != 400:
-                raise TransportError(
-                    "Got unsuccessful response from server (status code: {})".format(
-                        response.status_code,
-                    ),
-                    response=response,
-                )
+            raise TransportError(
+                "Got unsuccessful response from server (status code: {})".format(
+                    response.status_code,
+                ),
+                response=response,
+            )
 
         # Ensures the response body can be deserialized to JSON.
         try:

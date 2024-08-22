@@ -11,7 +11,7 @@ init:
 # --------------------------------------------------------------------------------------------------
 
 shell:
-	pipenv run ipython
+	pipenv shell
 
 
 # QUALITY ASSURANCE

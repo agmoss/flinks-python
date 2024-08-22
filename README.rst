@@ -12,12 +12,6 @@ pyflinks
     :target: https://pypi.python.org/pypi/pyflinks/
     :alt: Latest Version
 
-.. image:: https://travis-ci.org/agmoss/pyflinks.svg?branch=master
-    :target: https://travis-ci.org/agmoss/pyflinks
-
-.. image:: https://codecov.io/gh/agmoss/pyflinks/branch/master/graph/badge.svg
-  :target: https://codecov.io/gh/agmoss/pyflinks
-
 |
 
 **pyflinks** is a Python module for communicating with the
